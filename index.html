@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Tree Restaurant | Best Asian Fusion in Vientiane, Laos</title>
+  <meta name="description" content="Golden Tree Restaurant — the best Asian fusion dining experience in Vientiane, Laos. Serving local Lao cuisine, international dishes & freshly brewed coffee. Reserve your table today." />
+  <meta name="keywords" content="best restaurant Vientiane, Golden Tree Restaurant, Asian fusion Vientiane, Lao food restaurant, cafe Vientiane Laos, tourist restaurant Vientiane" />
+  <meta property="og:title" content="Golden Tree Restaurant | Asian Fusion · Vientiane, Laos" />
+  <meta property="og:description" content="Cozy & elegant dining in the heart of Vientiane. Lao, Asian & international dishes. 4.2★ on Google." />
+  <meta property="og:type" content="restaurant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================
+       CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+    ========================================= */
+    :root {
+      --gold:        #C8A45A;
+      --gold-light:  #E4C88A;
+      --gold-dark:   #9A7A30;
+      --forest:      #1B2D1F;
+      --forest-mid:  #263B2A;
+      --forest-soft: #344D38;
+      --cream:       #FAF6EF;
+      --cream-dark:  #EDE4D2;
+      --white:       #FFFFFF;
+      --text:        #1B1B17;
+      --text-mid:    #4A4A40;
+      --text-muted:  #7A7A6E;
+      --serif:       'Playfair Display', Georgia, serif;
+      --sans:        'Jost', system-ui, sans-serif;
+      --ease:        cubic-bezier(.22,.68,0,1.2);
+      --shadow-sm:   0 2px 12px rgba(27,45,31,.08);
+      --shadow:      0 8px 36px rgba(27,45,31,.13);
+      --shadow-lg:   0 20px 64px rgba(27,45,31,.18);
+      --radius:      6px;
+    }
+
+    /* =========================================
+       RESET & BASE
+    ========================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--text); overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* =========================================
+       UTILITIES
+    ========================================= */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: ''; display: block; width: 28px; height: 1px; background: var(--gold); opacity: .6;
+    }
+    .section-title {
+      font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 600; line-height: 1.12; color: var(--forest);
+    }
+    .section-title.light { color: var(--cream); }
+    .tag {
+      display: inline-block; font-size: 10px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 2px;
+    }
+    .tag-hot  { background: #D94F2B; color: #fff; }
+    .tag-special { background: var(--gold); color: var(--forest); }
+    .tag-new  { background: #2B7A4F; color: #fff; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: var(--radius);
+      font-family: var(--sans); font-size: 13px; font-weight: 600;
+      letter-spacing: .6px; transition: all .25s var(--ease); cursor: pointer; border: none;
+      white-space: nowrap;
+    }
+    .btn-gold  { background: var(--gold); color: var(--forest); }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(200,164,90,.4); }
+    .btn-dark  { background: var(--forest); color: var(--white); }
+    .btn-dark:hover { background: var(--forest-mid); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.55); }
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+    .btn-outline-dark { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); }
+    .btn-outline-dark:hover { background: var(--forest); color: var(--white); }
+
+    /* =========================================
+       STICKY NAV
+    ========================================= */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      padding: 22px 0; transition: all .35s ease;
+    }
+    #nav.scrolled {
+      background: rgba(27,45,31,.96); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 14px 0; box-shadow: 0 2px 24px rgba(0,0,0,.25);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      font-family: var(--serif); font-size: 1.45rem; font-weight: 700;
+      color: var(--white); display: flex; align-items: center; gap: 10px;
+    }
+    .logo-leaf {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--gold); display: flex; align-items: center;
+      justify-content: center; font-size: 17px; flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,.78);
+      transition: color .2s; letter-spacing: .3px;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-reserve {
+      background: var(--gold); color: var(--forest);
+      padding: 9px 20px; border-radius: var(--radius); font-weight: 700;
+      font-size: 13px; transition: all .2s;
+    }
+    .nav-reserve:hover { background: var(--gold-light); color: var(--forest) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .hamburger span { display: block; width: 23px; height: 2px; background: var(--white); border-radius: 2px; transition: all .3s; }
+
+    /* Mobile overlay menu */
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 850;
+      background: var(--forest); flex-direction: column;
+      align-items: center; justify-content: center; gap: 36px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a { font-family: var(--serif); font-size: 2rem; color: var(--white); }
+    .mob-menu a:hover { color: var(--gold); }
+    .mob-close {
+      position: absolute; top: 22px; right: 22px;
+      font-size: 2rem; color: var(--white); background: none; border: none; cursor: pointer;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    #hero {
+      min-height: 100vh; position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, rgba(27,45,31,.88) 0%, rgba(27,45,31,.52) 55%, rgba(27,45,31,.78) 100%),
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=85&auto=format') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 220px;
+      background: linear-gradient(to top, var(--cream) 0%, transparent 100%);
+    }
+    /* Decorative gold line */
+    .hero-bg::before {
+      content: ''; position: absolute; top: 0; right: 18%; width: 1px; height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(200,164,90,.3) 40%, rgba(200,164,90,.12) 70%, transparent);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; padding: 140px 0 120px; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(200,164,90,.15); border: 1px solid rgba(200,164,90,.35);
+      padding: 7px 16px; border-radius: 100px; margin-bottom: 28px;
+    }
+    .hero-pill-stars { font-size: 12px; color: var(--gold-light); }
+    .hero-pill-text { font-size: 12px; color: rgba(255,255,255,.8); font-weight: 500; }
+    h1 {
+      font-family: var(--serif); font-size: clamp(3rem, 7.5vw, 6rem);
+      font-weight: 700; color: var(--white); line-height: 1.02; margin-bottom: 22px;
+    }
+    h1 em { color: var(--gold-light); font-style: italic; display: block; }
+    .hero-sub {
+      font-size: 17px; color: rgba(255,255,255,.7);
+      max-width: 500px; line-height: 1.75; margin-bottom: 40px; font-weight: 300;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-info-bar {
+      display: flex; gap: 32px; margin-top: 64px;
+      flex-wrap: wrap;
+    }
+    .hib { display: flex; align-items: center; gap: 10px; }
+    .hib-icon { font-size: 20px; }
+    .hib-text { font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.45; }
+    .hib-text strong { display: block; color: rgba(255,255,255,.9); font-size: 14px; }
+    .hero-floater {
+      position: absolute; right: 60px; top: 50%; transform: translateY(-50%);
+      z-index: 2; display: flex; flex-direction: column; gap: 14px;
+    }
+    .hero-stat-card {
+      background: rgba(255,255,255,.07); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.12); border-radius: 12px;
+      padding: 18px 22px; text-align: center; min-width: 120px;
+    }
+    .hsc-num { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--gold); }
+    .hsc-label { font-size: 11px; color: rgba(255,255,255,.5); margin-top: 3px; letter-spacing: .5px; }
+
+    /* =========================================
+       PROMO STRIP
+    ========================================= */
+    .promo-strip {
+      background: var(--gold); padding: 14px 0; text-align: center;
+    }
+    .promo-strip p { font-size: 13px; font-weight: 600; color: var(--forest); letter-spacing: .5px; }
+    .promo-strip a { text-decoration: underline; color: var(--forest); }
+
+    /* =========================================
+       MENU
+    ========================================= */
+    #menu { padding: 100px 0; background: var(--cream); }
+    .menu-header { text-align: center; margin-bottom: 16px; }
+    .menu-header p { color: var(--text-mid); font-size: 16px; max-width: 480px; margin: 16px auto 0; line-height: 1.7; }
+    .menu-tabs {
+      display: flex; justify-content: center; gap: 8px;
+      flex-wrap: wrap; margin: 40px 0 48px;
+    }
+    .mtab {
+      padding: 9px 22px; border-radius: 100px; font-size: 13px; font-weight: 500;
+      cursor: pointer; border: 1.5px solid var(--cream-dark);
+      color: var(--text-mid); background: var(--white); transition: all .2s;
+    }
+    .mtab.active, .mtab:hover {
+      background: var(--forest); color: var(--white); border-color: var(--forest);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 22px;
+    }
+    .menu-card {
+      background: var(--white); border-radius: 10px; overflow: hidden;
+      box-shadow: var(--shadow-sm); transition: all .3s var(--ease);
+      display: flex; flex-direction: column;
+    }
+    .menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .mc-img { height: 210px; position: relative; overflow: hidden; }
+    .mc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .menu-card:hover .mc-img img { transform: scale(1.07); }
+    .mc-tags { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; }
+    .mc-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
+    .mc-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--forest); margin-bottom: 6px; }
+    .mc-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; flex: 1; }
+    .mc-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--cream-dark);
+    }
+    .mc-price { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--gold-dark); }
+    .mc-price span { font-family: var(--sans); font-size: 11px; font-weight: 400; color: var(--text-muted); margin-left: 4px; }
+    .mc-btn {
+      font-size: 12px; font-weight: 600; color: var(--forest);
+      padding: 7px 14px; border: 1.5px solid var(--forest);
+      border-radius: 4px; transition: all .2s;
+    }
+    .mc-btn:hover { background: var(--forest); color: var(--white); }
+    .menu-footer { text-align: center; margin-top: 48px; }
+    .menu-note { font-size: 13px; color: var(--text-muted); margin-top: 16px; }
+
+    /* Category sections visibility */
+    .menu-cat { display: none; }
+    .menu-cat.visible { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 22px; }
+
+    /* =========================================
+       ABOUT
+    ========================================= */
+    #about { padding: 100px 0; background: var(--forest); overflow: hidden; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-visuals { position: relative; }
+    .about-main-img {
+      border-radius: 10px; overflow: hidden;
+      height: 520px; box-shadow: var(--shadow-lg);
+    }
+    .about-main-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-accent-img {
+      position: absolute; bottom: -28px; right: -28px;
+      width: 210px; height: 210px; border-radius: 10px; overflow: hidden;
+      border: 6px solid var(--forest); box-shadow: var(--shadow-lg);
+    }
+    .about-accent-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-badge {
+      position: absolute; top: -22px; left: 18px;
+      background: var(--gold); padding: 16px 22px; border-radius: 10px; box-shadow: var(--shadow);
+    }
+    .ab-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; color: var(--forest); line-height: 1; }
+    .ab-lbl { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: var(--forest-soft); margin-top: 2px; }
+    .about-text .section-eyebrow { color: var(--gold); }
+    .about-text .section-eyebrow::before, .about-text .section-eyebrow::after { background: var(--gold); }
+    .about-text h2 { margin-bottom: 22px; }
+    .about-text p { font-size: 15px; color: rgba(250,246,239,.65); line-height: 1.85; margin-bottom: 18px; }
+    .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 30px 0 36px; }
+    .af {  display: flex; align-items: flex-start; gap: 12px; }
+    .af-icon {
+      width: 42px; height: 42px; border-radius: 8px; flex-shrink: 0;
+      background: rgba(200,164,90,.12); display: flex; align-items: center; justify-content: center; font-size: 19px;
+    }
+    .af-text strong { display: block; font-size: 13px; color: var(--cream); margin-bottom: 2px; font-weight: 600; }
+    .af-text span { font-size: 12px; color: rgba(250,246,239,.45); line-height: 1.5; }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+    #gallery { padding: 100px 0; background: var(--cream); }
+    .gallery-header { text-align: center; margin-bottom: 48px; }
+    .gallery-header p { color: var(--text-mid); margin-top: 12px; font-size: 15px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 14px;
+    }
+    .gi { border-radius: 10px; overflow: hidden; position: relative; cursor: pointer; }
+    .gi img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .gi:hover img { transform: scale(1.07); }
+    .gi::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(27,45,31,.45), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .gi:hover::after { opacity: 1; }
+    .gi-hover-label {
+      position: absolute; bottom: 14px; left: 14px; z-index: 2;
+      font-size: 12px; font-weight: 600; color: var(--white);
+      letter-spacing: .5px; opacity: 0; transition: opacity .3s;
+    }
+    .gi:hover .gi-hover-label { opacity: 1; }
+    .gi1 { grid-column: 1 / 5; grid-row: 1 / 3; }
+    .gi2 { grid-column: 5 / 8; grid-row: 1; }
+    .gi3 { grid-column: 8 / 13; grid-row: 1; }
+    .gi4 { grid-column: 5 / 9; grid-row: 2; }
+    .gi5 { grid-column: 9 / 13; grid-row: 2; }
+
+    /* =========================================
+       REVIEWS
+    ========================================= */
+    #reviews { padding: 100px 0; background: var(--forest); }
+    .reviews-header { text-align: center; margin-bottom: 56px; }
+    .reviews-header .section-eyebrow { color: var(--gold); }
+    .reviews-header .section-eyebrow::before, .reviews-header .section-eyebrow::after { background: var(--gold); }
+    .reviews-header p { color: rgba(250,246,239,.55); margin-top: 12px; font-size: 15px; }
+    .reviews-summary {
+      display: flex; align-items: stretch; gap: 0;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px; overflow: hidden; margin-bottom: 52px;
+    }
+    .rs-big {
+      padding: 36px 44px; flex-shrink: 0; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.06);
+    }
+    .rs-num { font-family: var(--serif); font-size: 5.5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .rs-stars { font-size: 20px; color: var(--gold); letter-spacing: 3px; margin: 6px 0; }
+    .rs-count { font-size: 12px; color: rgba(250,246,239,.4); }
+    .rs-bars { padding: 30px 44px; display: flex; flex-direction: column; justify-content: center; gap: 10px; flex: 1; }
+    .rsb { display: flex; align-items: center; gap: 12px; }
+    .rsb-lbl { font-size: 12px; color: rgba(250,246,239,.45); width: 28px; text-align: right; }
+    .rsb-track { flex: 1; max-width: 160px; height: 6px; background: rgba(255,255,255,.07); border-radius: 3px; overflow: hidden; }
+    .rsb-fill { height: 100%; background: var(--gold); border-radius: 3px; }
+    .rs-platforms { padding: 30px 44px; display: flex; flex-direction: column; justify-content: center; gap: 16px; border-left: 1px solid rgba(255,255,255,.06); }
+    .rsp { display: flex; align-items: center; gap: 12px; }
+    .rsp-icon { font-size: 22px; }
+    .rsp-info strong { display: block; font-size: 14px; color: var(--cream); font-weight: 600; }
+    .rsp-info span { font-size: 12px; color: rgba(250,246,239,.4); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .review-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
+      border-radius: 12px; padding: 26px; transition: all .3s;
+    }
+    .review-card:hover { background: rgba(255,255,255,.07); transform: translateY(-3px); }
+    .rc-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+    .rc-quote { font-size: 14px; color: rgba(250,246,239,.7); line-height: 1.75; font-style: italic; margin-bottom: 20px; }
+    .rc-author { display: flex; align-items: center; gap: 12px; }
+    .rc-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--forest-soft); display: flex; align-items: center;
+      justify-content: center; font-family: var(--serif); font-size: 1.1rem;
+      font-weight: 700; color: var(--gold); flex-shrink: 0;
+    }
+    .rc-name { font-size: 14px; font-weight: 600; color: var(--cream); }
+    .rc-meta { font-size: 11px; color: rgba(250,246,239,.35); margin-top: 2px; }
+
+    /* =========================================
+       RESERVATION CTA
+    ========================================= */
+    #reserve {
+      padding: 80px 0;
+      background: var(--gold);
+      position: relative; overflow: hidden;
+    }
+    #reserve::before {
+      content: 'RESERVE';
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-family: var(--serif); font-size: 20vw; font-weight: 700;
+      color: rgba(27,45,31,.06); letter-spacing: -4px; white-space: nowrap;
+      pointer-events: none;
+    }
+    .reserve-inner { text-align: center; position: relative; }
+    .reserve-inner h2 {
+      font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700; color: var(--forest); margin-bottom: 14px;
+    }
+    .reserve-inner p { color: rgba(27,45,31,.65); font-size: 16px; margin-bottom: 38px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .reserve-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+    #contact { padding: 100px 0; background: var(--cream); }
+    .contact-header { text-align: center; margin-bottom: 60px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 36px; align-items: start; }
+    .contact-panels { display: flex; flex-direction: column; gap: 20px; }
+    .cp {
+      background: var(--white); border-radius: 12px; padding: 26px;
+      box-shadow: var(--shadow-sm);
+    }
+    .cp-title {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--serif); font-size: 1.05rem; font-weight: 600;
+      color: var(--forest); margin-bottom: 18px;
+    }
+    .cp-icon {
+      width: 36px; height: 36px; background: rgba(200,164,90,.1);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+    .hours-list { display: flex; flex-direction: column; gap: 0; }
+    .hour-row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 14px; padding: 9px 0; border-bottom: 1px solid var(--cream-dark);
+    }
+    .hour-row:last-child { border: none; }
+    .hour-day { color: var(--text-mid); }
+    .hour-time { color: var(--forest); font-weight: 600; }
+    .hour-closed { color: #C0392B; font-weight: 600; }
+    .hour-today { background: rgba(200,164,90,.06); margin: 0 -12px; padding: 9px 12px; border-radius: 4px; }
+    .contact-action-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    .cab {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; border-radius: 8px; font-size: 14px; font-weight: 600;
+      transition: all .2s; cursor: pointer; border: none; width: 100%; text-align: left;
+    }
+    .cab-icon { font-size: 20px; }
+    .cab-call { background: var(--forest); color: var(--white); }
+    .cab-call:hover { background: var(--forest-mid); transform: translateY(-2px); }
+    .cab-wa { background: #25D366; color: var(--white); }
+    .cab-wa:hover { background: #1EBE5D; transform: translateY(-2px); }
+    .cab-dir { background: var(--cream-dark); color: var(--forest); }
+    .cab-dir:hover { background: #DDD0B8; transform: translateY(-2px); }
+    .map-container {
+      border-radius: 14px; overflow: hidden; box-shadow: var(--shadow);
+      height: 100%; min-height: 480px;
+    }
+    .map-container iframe { width: 100%; height: 100%; min-height: 480px; border: none; display: block; }
+
+    /* =========================================
+       FLOATING WHATSAPP
+    ========================================= */
+    .wa-float {
+      position: fixed; bottom: 26px; right: 26px; z-index: 950;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; box-shadow: 0 4px 22px rgba(37,211,102,.5);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: transform .3s var(--ease);
+      animation: waPulse 2.5s infinite;
+    }
+    .wa-float:hover { transform: scale(1.12); animation: none; }
+    .wa-float svg { width: 30px; height: 30px; fill: white; }
+    .wa-tooltip {
+      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+      background: var(--forest); color: var(--white);
+      padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: 500;
+      white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .2s;
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 4px 22px rgba(37,211,102,.5); }
+      50%       { box-shadow: 0 4px 32px rgba(37,211,102,.7), 0 0 0 10px rgba(37,211,102,.12); }
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    footer { background: #111814; padding: 64px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 48px; }
+    .footer-logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--white); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .footer-desc { font-size: 14px; color: rgba(255,255,255,.36); line-height: 1.75; max-width: 280px; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 22px; }
+    .footer-social {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,.07); display: flex; align-items: center;
+      justify-content: center; font-size: 16px; color: rgba(255,255,255,.4);
+      transition: all .2s;
+    }
+    .footer-social:hover { background: var(--gold); color: var(--forest); }
+    .footer-col-title { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 18px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 14px; color: rgba(255,255,255,.38); transition: color .2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 28px; border-top: 1px solid rgba(255,255,255,.05);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.22); }
+    .footer-lao { font-size: 12px; color: var(--gold); opacity: .55; }
+
+    /* =========================================
+       ANIMATIONS
+    ========================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim { opacity: 0; animation: fadeUp .7s var(--ease) forwards; }
+    .d1 { animation-delay: .1s; }
+    .d2 { animation-delay: .22s; }
+    .d3 { animation-delay: .34s; }
+    .d4 { animation-delay: .46s; }
+    .d5 { animation-delay: .58s; }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-floater { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 52px; }
+      .about-accent-img { display: none; }
+      .about-badge { top: auto; bottom: 14px; left: 14px; }
+      .about-main-img { height: 380px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+      .gi1, .gi2, .gi3, .gi4, .gi5 { grid-column: auto; grid-row: auto; height: 200px; }
+      .reviews-summary { flex-direction: column; }
+      .rs-big { border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .rs-platforms { border-left: none; border-top: 1px solid rgba(255,255,255,.06); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-features { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .menu-grid, .menu-cat.visible { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gi1, .gi2, .gi3, .gi4, .gi5 { height: 220px; }
+      .reserve-btns { flex-direction: column; align-items: center; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================
+     FLOATING WHATSAPP BUTTON
+============================================ -->
+<a href="https://wa.me/85602028807777" target="_blank" rel="noopener" class="wa-float" aria-label="Message us on WhatsApp">
+  <span class="wa-tooltip">💬 Chat with us</span>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2C8.28 2 2 8.28 2 16c0 2.45.65 4.74 1.78 6.73L2 30l7.52-1.74A13.92 13.92 0 0016 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm7.5 19.5c-.31.87-1.8 1.63-2.48 1.68-.64.04-1.25.29-4.23-1.02-3.58-1.55-5.87-5.24-6.05-5.49-.17-.25-1.45-1.93-1.45-3.68 0-1.74.91-2.6 1.23-2.96a1.3 1.3 0 01.94-.44c.23 0 .46.01.66.01.21 0 .5-.08.78.6.3.72 1.02 2.49 1.11 2.67.09.18.15.39.03.62-.12.24-.18.39-.36.6-.17.21-.37.47-.53.63-.17.17-.35.35-.15.69.2.34.9 1.48 1.93 2.4 1.33 1.19 2.44 1.56 2.79 1.74.34.17.54.14.74-.08.2-.23.86-.99 1.09-1.33.23-.34.45-.28.76-.17.31.11 1.97.93 2.31 1.1.34.17.56.25.65.39.09.15.09.84-.22 1.71z"/>
+  </svg>
+</a>
+
+<!-- ============================================
+     MOBILE MENU OVERLAY
+============================================ -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMob()" aria-label="Close menu">✕</button>
+  <a href="#menu" onclick="closeMob()">Menu</a>
+  <a href="#about" onclick="closeMob()">Our Story</a>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#reviews" onclick="closeMob()">Reviews</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="https://wa.me/85602028807777" target="_blank"
+     style="background:var(--gold);color:var(--forest);padding:14px 34px;border-radius:8px;font-weight:700;font-size:1rem;margin-top:8px;">
+    📅 Reserve a Table
+  </a>
+</div>
+
+<!-- ============================================
+     NAVIGATION
+============================================ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <div class="logo-leaf">🌿</div>
+        Golden Tree
+      </a>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#about">Our Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/85602028807777" target="_blank" class="nav-reserve">Reserve Table</a>
+      </div>
+      <div class="hamburger" onclick="openMob()" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO SECTION
+============================================ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-pill anim d1">
+        <span class="hero-pill-stars">★★★★☆</span>
+        <span class="hero-pill-text">4.2 · 136 Google Reviews · Vientiane's Favourite</span>
+      </div>
+
+      <h1 class="anim d2">
+        Where Flavours
+        <em>Meet Soul</em>
+      </h1>
+
+      <p class="hero-sub anim d3">
+        Elegant Asian fusion dining in the heart of Vientiane —
+        local Lao specialties, international favourites &amp; freshly brewed coffee, all in one cozy spot.
+      </p>
+
+      <!-- LAO TRANSLATION NOTE: Replace English subtitle above with Lao text here -->
+
+      <div class="hero-ctas anim d4">
+        <a href="#menu" class="btn btn-gold">
+          🍽️ View Full Menu
+        </a>
+        <a href="https://wa.me/85602028807777" target="_blank" class="btn btn-ghost">
+          📅 Reserve a Table
+        </a>
+      </div>
+
+      <div class="hero-info-bar anim d5">
+        <div class="hib">
+          <span class="hib-icon">📍</span>
+          <div class="hib-text">
+            <strong>Phonsinuan Village</strong>
+            Vientiane, Laos
+          </div>
+        </div>
+        <div class="hib">
+          <span class="hib-icon">🕐</span>
+          <div class="hib-text">
+            <strong>Open Daily</strong>
+            9:00 AM – 10:00 PM
+          </div>
+        </div>
+        <div class="hib">
+          <span class="hib-icon">📶</span>
+          <div class="hib-text">
+            <strong>Free Wi-Fi</strong>
+            Outdoor Seating Available
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stat cards — right side -->
+  <div class="hero-floater">
+    <div class="hero-stat-card">
+      <div class="hsc-num">4.2★</div>
+      <div class="hsc-label">Google Rating</div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hsc-num">136</div>
+      <div class="hsc-label">Happy Reviews</div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hsc-num">5★</div>
+      <div class="hsc-label">Facebook</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROMO STRIP
+============================================ -->
+<div class="promo-strip" role="banner">
+  <p>
+    🔥 <strong>Limited Daily Special:</strong> Try our Chef's Lao Fusion Set Menu — Only 10 portions available each day.
+    <a href="https://wa.me/85602028807777" target="_blank">Reserve yours now →</a>
+  </p>
+</div>
+
+<!-- ============================================
+     MENU SECTION
+============================================ -->
+<section id="menu" aria-labelledby="menu-heading">
+  <div class="container">
+    <div class="menu-header">
+      <div class="section-eyebrow">Our Menu</div>
+      <h2 class="section-title" id="menu-heading">Crafted with the Finest Ingredients</h2>
+      <p>From traditional Lao flavours to Asian fusion classics — every dish is made fresh, every day.</p>
+      <!-- LAO TRANSLATION NOTE: Add Lao subtitle here -->
+    </div>
+
+    <div class="menu-tabs" role="tablist">
+      <button class="mtab active" onclick="switchTab('starters')" role="tab">Starters</button>
+      <button class="mtab" onclick="switchTab('mains')" role="tab">Main Courses</button>
+      <button class="mtab" onclick="switchTab('lao')" role="tab">Lao Specials</button>
+      <button class="mtab" onclick="switchTab('drinks')" role="tab">Drinks &amp; Coffee</button>
+      <button class="mtab" onclick="switchTab('desserts')" role="tab">Desserts</button>
+    </div>
+
+    <!-- STARTERS -->
+    <div class="menu-cat visible" id="cat-starters">
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80&auto=format" alt="Crispy Spring Rolls" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-hot">🔥 Popular</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Crispy Spring Rolls</h3>
+          <p class="mc-desc">Thin golden pastry filled with glass noodles, mushrooms &amp; seasonal vegetables. Served with sweet chili sauce.</p>
+          <div class="mc-foot">
+            <div class="mc-price">35,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Crispy Spring Rolls" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80&auto=format" alt="Steamed Dumplings" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-new">✨ New</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Steamed Dumplings</h3>
+          <p class="mc-desc">Delicate dumplings filled with a blend of pork, ginger &amp; spring onion. Served with our signature dipping sauce.</p>
+          <div class="mc-foot">
+            <div class="mc-price">42,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Steamed Dumplings" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80&auto=format" alt="Tom Yum Soup" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-hot">🔥 Popular</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Tom Yum Soup</h3>
+          <p class="mc-desc">Classic Southeast Asian soup with lemongrass, galangal, kaffir lime leaves, mushrooms &amp; your choice of chicken or prawn.</p>
+          <div class="mc-foot">
+            <div class="mc-price">48,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Tom Yum Soup" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAINS -->
+    <div class="menu-cat" id="cat-mains">
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80&auto=format" alt="Grilled Lemongrass Chicken" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-hot">🔥 Popular today</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Grilled Lemongrass Chicken</h3>
+          <p class="mc-desc">Free-range chicken marinated in lemongrass, galangal &amp; fish sauce, grilled over charcoal. Served with sticky rice &amp; papaya salad.</p>
+          <div class="mc-foot">
+            <div class="mc-price">75,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Lemongrass Chicken" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?w=600&q=80&auto=format" alt="Slow-Braised Beef" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-special">⭐ Chef's Pick</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Slow-Braised Beef Stew</h3>
+          <p class="mc-desc">Tender beef braised for 6 hours in a rich broth of herbs, star anise &amp; spices. Served with jasmine rice or crusty baguette.</p>
+          <div class="mc-foot">
+            <div class="mc-price">95,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Slow-Braised Beef" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1562802378-063ec186a863?w=600&q=80&auto=format" alt="Golden Tofu" loading="lazy" />
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Crispy Golden Tofu</h3>
+          <p class="mc-desc">Fan-favourite dish — crispy tofu cubes tossed in a sweet &amp; spicy glaze, served on a bed of stir-fried vegetables &amp; jasmine rice.</p>
+          <div class="mc-foot">
+            <div class="mc-price">62,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Crispy Golden Tofu" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAO SPECIALS -->
+    <div class="menu-cat" id="cat-lao">
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80&auto=format" alt="Laap" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-hot">🇱🇦 Lao Classic</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Laap (ລາບ)</h3>
+          <p class="mc-desc">The national dish of Laos — minced meat salad with fresh herbs, roasted rice powder, chili &amp; lime. Choose: chicken, pork or beef.</p>
+          <div class="mc-foot">
+            <div class="mc-price">58,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Laap" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80&auto=format" alt="Tam Mak Hoong" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-hot">🇱🇦 Must Try</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Tam Mak Hoong (ຕຳໝາກຫຸ່ງ)</h3>
+          <p class="mc-desc">Traditional Lao green papaya salad with tomatoes, chili, fish sauce &amp; lime — bold, fresh &amp; irresistible.</p>
+          <div class="mc-foot">
+            <div class="mc-price">38,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to order Tam Mak Hoong" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80&auto=format" alt="Or Lam" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-special">⭐ Limited Daily</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Or Lam Stew (ອໍ່ລາມ)</h3>
+          <p class="mc-desc">A rich Luang Prabang-style stew with buffalo meat, wood ear mushrooms, eggplant &amp; aromatic herbs. Only 8 bowls per day.</p>
+          <div class="mc-foot">
+            <div class="mc-price">85,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777?text=I'd like to reserve Or Lam Stew" class="mc-btn" target="_blank">Reserve</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-cat" id="cat-drinks">
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&auto=format" alt="Lao Coffee" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-hot">☕ Best Seller</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Traditional Lao Iced Coffee</h3>
+          <p class="mc-desc">Bold dark-roast Lao arabica brewed through a traditional sock filter, served over ice with sweetened condensed milk.</p>
+          <div class="mc-foot">
+            <div class="mc-price">25,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1610631787813-9eeb1a2386cc?w=600&q=80&auto=format" alt="Fresh Fruit Smoothie" loading="lazy" />
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Fresh Tropical Smoothie</h3>
+          <p class="mc-desc">Blended fresh mango, papaya or passionfruit with a splash of lime juice — no sugar added, just pure tropical goodness.</p>
+          <div class="mc-foot">
+            <div class="mc-price">28,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&auto=format" alt="Pandan Latte" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-new">✨ New</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Pandan Coconut Latte</h3>
+          <p class="mc-desc">Espresso meets Southeast Asia — our signature latte with house-made pandan syrup &amp; fresh coconut milk. A local favourite.</p>
+          <div class="mc-foot">
+            <div class="mc-price">32,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="menu-cat" id="cat-desserts">
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80&auto=format" alt="Coconut Tapioca" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-hot">🔥 Popular</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Coconut Tapioca Pudding</h3>
+          <p class="mc-desc">Creamy tapioca pearls slow-cooked in rich coconut milk with palm sugar — perfectly balanced sweetness, served warm or chilled.</p>
+          <div class="mc-foot">
+            <div class="mc-price">30,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="mc-img">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80&auto=format" alt="Mango Sticky Rice" loading="lazy" />
+          <div class="mc-tags"><span class="tag tag-special">⭐ Chef's Choice</span></div>
+        </div>
+        <div class="mc-body">
+          <h3 class="mc-name">Mango Sticky Rice</h3>
+          <p class="mc-desc">The iconic Southeast Asian dessert — sweet glutinous rice soaked in coconut cream, topped with ripe sliced fresh mango.</p>
+          <div class="mc-foot">
+            <div class="mc-price">38,000 <span>LAK</span></div>
+            <a href="https://wa.me/85602028807777" class="mc-btn" target="_blank">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-footer">
+      <a href="https://wa.me/85602028807777?text=Please send me the full menu" target="_blank" class="btn btn-dark">
+        📋 Request Full Menu on WhatsApp
+      </a>
+      <p class="menu-note">💵 Cash only · All prices include tax · Prices in Lao Kip (LAK)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ABOUT SECTION
+============================================ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Images -->
+      <div class="about-visuals">
+        <div class="about-badge">
+          <div class="ab-num">5+</div>
+          <div class="ab-lbl">Years of Flavour</div>
+        </div>
+        <div class="about-main-img">
+          <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=85&auto=format" alt="Golden Tree Restaurant interior ambiance" loading="lazy" />
+        </div>
+        <div class="about-accent-img">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80&auto=format" alt="Beautifully plated dish at Golden Tree" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="about-text">
+        <div class="section-eyebrow">Our Story</div>
+        <h2 class="section-title light" id="about-heading">A Cozy Corner <br/>in the Heart of Vientiane</h2>
+
+        <!-- LAO TRANSLATION NOTE: Add Lao version of the story below each paragraph -->
+
+        <p>Golden Tree was born from a simple belief: great food should bring people together. Nestled in Phonsinuan Village, our restaurant offers a warm escape from the city — where the aroma of lemongrass and freshly brewed coffee fills the air.</p>
+        <p>We serve Asian fusion cuisine rooted in local Lao traditions, elevated with international techniques. Every ingredient is sourced fresh from local markets, every recipe crafted with care — because you deserve more than just a meal.</p>
+
+        <div class="about-features">
+          <div class="af">
+            <div class="af-icon">🌿</div>
+            <div class="af-text">
+              <strong>Fresh Local Ingredients</strong>
+              <span>Sourced daily from Vientiane's morning markets</span>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-icon">☕</div>
+            <div class="af-text">
+              <strong>Specialty Coffee Bar</strong>
+              <span>Lao arabica beans, freshly roasted &amp; brewed</span>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-icon">📶</div>
+            <div class="af-text">
+              <strong>Free Wi-Fi</strong>
+              <span>Perfect for remote workers &amp; travellers</span>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-icon">🌳</div>
+            <div class="af-text">
+              <strong>Outdoor Seating</strong>
+              <span>Shaded garden terrace — open daily</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/85602028807777" target="_blank" class="btn btn-gold">
+          📅 Book Your Table Today
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     GALLERY
+============================================ -->
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="gallery-header">
+      <div class="section-eyebrow">Gallery</div>
+      <h2 class="section-title" id="gallery-heading">A Feast for the Eyes</h2>
+      <p>Every dish tells a story. Every corner has its own charm.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gi gi1">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80&auto=format" alt="Beautifully plated Asian fusion dish" loading="lazy" />
+        <div class="gi-hover-label">Signature Dishes</div>
+      </div>
+      <div class="gi gi2">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80&auto=format" alt="Restaurant ambiance" loading="lazy" />
+        <div class="gi-hover-label">Cozy Ambiance</div>
+      </div>
+      <div class="gi gi3">
+        <img src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?w=600&q=80&auto=format" alt="Fresh coffee preparation" loading="lazy" />
+        <div class="gi-hover-label">Specialty Coffee</div>
+      </div>
+      <div class="gi gi4">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80&auto=format" alt="Fresh Lao food" loading="lazy" />
+        <div class="gi-hover-label">Local Lao Cuisine</div>
+      </div>
+      <div class="gi gi5">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80&auto=format" alt="Garden terrace seating" loading="lazy" />
+        <div class="gi-hover-label">Garden Terrace</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     REVIEWS
+============================================ -->
+<section id="reviews" aria-labelledby="reviews-heading">
+  <div class="container">
+    <div class="reviews-header">
+      <div class="section-eyebrow">What Guests Say</div>
+      <h2 class="section-title light" id="reviews-heading">Loved by Locals &amp; Travellers</h2>
+      <p>136 reviews on Google · 5 stars on Facebook</p>
+    </div>
+
+    <!-- Rating Summary -->
+    <div class="reviews-summary">
+      <div class="rs-big">
+        <div class="rs-num">4.2</div>
+        <div class="rs-stars">★★★★☆</div>
+        <div class="rs-count">136 Google Reviews</div>
+      </div>
+      <div class="rs-bars">
+        <div class="rsb"><span class="rsb-lbl">5★</span><div class="rsb-track"><div class="rsb-fill" style="width:60%"></div></div></div>
+        <div class="rsb"><span class="rsb-lbl">4★</span><div class="rsb-track"><div class="rsb-fill" style="width:25%"></div></div></div>
+        <div class="rsb"><span class="rsb-lbl">3★</span><div class="rsb-track"><div class="rsb-fill" style="width:9%"></div></div></div>
+        <div class="rsb"><span class="rsb-lbl">2★</span><div class="rsb-track"><div class="rsb-fill" style="width:4%"></div></div></div>
+        <div class="rsb"><span class="rsb-lbl">1★</span><div class="rsb-track"><div class="rsb-fill" style="width:2%"></div></div></div>
+      </div>
+      <div class="rs-platforms">
+        <div class="rsp">
+          <span class="rsp-icon">⭐</span>
+          <div class="rsp-info">
+            <strong>4.2 / 5</strong>
+            <span>136 Google Reviews</span>
+          </div>
+        </div>
+        <div class="rsp">
+          <span class="rsp-icon">👍</span>
+          <div class="rsp-info">
+            <strong>5.0 / 5</strong>
+            <span>Facebook · 3 votes</span>
+          </div>
+        </div>
+        <div class="rsp">
+          <span class="rsp-icon">🌍</span>
+          <div class="rsp-info">
+            <strong>TripAdvisor</strong>
+            <span>Recommended</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Cards -->
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <p class="rc-quote">"The burger was absolutely fabulous — I ordered a second one! Great value for money and the prices are very reasonable. Will definitely return."</p>
+        <div class="rc-author">
+          <div class="rc-avatar">M</div>
+          <div>
+            <div class="rc-name">Mark T.</div>
+            <div class="rc-meta">Google Review · Tourist from UK</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <p class="rc-quote">"Stumbled across this gem while exploring Vientiane. The Lao iced coffee is the best I've had in Southeast Asia. The staff were so warm and welcoming."</p>
+        <div class="rc-author">
+          <div class="rc-avatar">S</div>
+          <div>
+            <div class="rc-name">Sophie L.</div>
+            <div class="rc-meta">Google Review · Backpacker from France</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="rc-stars">★★★★☆</div>
+        <p class="rc-quote">"Cozy atmosphere, really tasty Asian fusion food. The outdoor seating is perfect for evenings. The Tom Yum was authentic and delicious. Highly recommend!"</p>
+        <div class="rc-author">
+          <div class="rc-avatar">K</div>
+          <div>
+            <div class="rc-name">Kenji A.</div>
+            <div class="rc-meta">Google Review · Expat in Vientiane</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <p class="rc-quote">"Best Laap I've had outside of a local family's home. You can tell every dish is made with love and fresh ingredients. A must-visit in Vientiane!"</p>
+        <div class="rc-author">
+          <div class="rc-avatar">A</div>
+          <div>
+            <div class="rc-name">Anita R.</div>
+            <div class="rc-meta">Google Review · Food Traveller</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <p class="rc-quote">"Perfect spot to work remotely — great Wi-Fi, good coffee, and the food arrived quickly. The mango sticky rice was dreamy. My new daily spot!"</p>
+        <div class="rc-author">
+          <div class="rc-avatar">D</div>
+          <div>
+            <div class="rc-name">David C.</div>
+            <div class="rc-meta">Google Review · Digital Nomad</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="rc-stars">★★★★☆</div>
+        <p class="rc-quote">"Authentic local vibe with modern touches. The coconut pandan latte is unique and so good. Prices are fair and the portions are generous. 👌"</p>
+        <div class="rc-author">
+          <div class="rc-avatar">N</div>
+          <div>
+            <div class="rc-name">Nadia P.</div>
+            <div class="rc-meta">Facebook Review · Local Customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     RESERVATION CTA
+============================================ -->
+<section id="reserve" aria-label="Reserve a table">
+  <div class="container">
+    <div class="reserve-inner">
+      <h2>Ready for a Memorable Meal?</h2>
+      <p>Reserve your table in seconds via WhatsApp — no apps, no fuss. We'll confirm within minutes.</p>
+      <div class="reserve-btns">
+        <a href="https://wa.me/85602028807777?text=Hi! I'd like to reserve a table at Golden Tree Restaurant." target="_blank" class="res-btn res-btn-dark">
+          📅 Reserve via WhatsApp
+        </a>
+        <a href="tel:+85602028807777" class="res-btn res-btn-outline">
+          📞 Call Us Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .res-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px; border-radius: 8px; font-weight: 700;
+    font-size: 15px; cursor: pointer; border: none; transition: all .25s; text-decoration: none;
+  }
+  .res-btn-dark { background: var(--forest); color: var(--white); }
+  .res-btn-dark:hover { background: var(--forest-mid); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(27,45,31,.35); }
+  .res-btn-outline { background: transparent; color: var(--forest); border: 2px solid var(--forest); }
+  .res-btn-outline:hover { background: rgba(27,45,31,.08); }
+</style>
+
+<!-- ============================================
+     CONTACT
+============================================ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-header">
+      <div class="section-eyebrow">Find Us</div>
+      <h2 class="section-title" id="contact-heading">Visit Golden Tree</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-panels">
+        <!-- Hours -->
+        <div class="cp">
+          <div class="cp-title">
+            <div class="cp-icon">🕐</div>
+            Opening Hours
+          </div>
+          <div class="hours-list">
+            <div class="hour-row hour-today">
+              <span class="hour-day">Monday – Friday</span>
+              <span class="hour-time">9:00 AM – 10:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="hour-day">Saturday</span>
+              <span class="hour-time">9:00 AM – 10:30 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="hour-day">Sunday</span>
+              <span class="hour-time">10:00 AM – 9:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address & Info -->
+        <div class="cp">
+          <div class="cp-title">
+            <div class="cp-icon">📍</div>
+            Location &amp; Info
+          </div>
+          <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:12px;">
+            Phonsinuan Village, Vientiane, Laos (XJ8H+343)<br />
+            <strong style="color:var(--forest);">Cash only · Outdoor seating · Free Wi-Fi</strong>
+          </p>
+          <!-- LAO TRANSLATION NOTE: Add Lao address here -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="cp">
+          <div class="cp-title">
+            <div class="cp-icon">📞</div>
+            Get in Touch
+          </div>
+          <div class="contact-action-btns">
+            <a href="tel:+85602028807777" class="cab cab-call">
+              <span class="cab-icon">📞</span>
+              Call: +856 020 28 807 777
+            </a>
+            <a href="https://wa.me/85602028807777?text=Hi! I'd like to visit Golden Tree Restaurant." target="_blank" class="cab cab-wa">
+              <span class="cab-icon">💬</span>
+              Message on WhatsApp
+            </a>
+            <a href="https://www.google.com/maps/search/Golden+Tree+Restaurant+Vientiane" target="_blank" class="cab cab-dir">
+              <span class="cab-icon">🗺️</span>
+              Get Directions on Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30592.47617955028!2d102.5830856!3d17.9756916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31246395c9d1e5bb%3A0xfc81bae4b75f21c2!2sGolden%20Tree%20Restaurant!5e0!3m2!1sen!2sla!4v1714848000000!5m2!1sen!2sla"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Golden Tree Restaurant location on Google Maps"
+          aria-label="Google Map showing Golden Tree Restaurant location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-leaf" style="width:32px;height:32px;font-size:16px;">🌿</div>
+          Golden Tree Restaurant
+        </div>
+        <p class="footer-desc">
+          Cozy Asian fusion dining in the heart of Vientiane. Where every meal is a story worth sharing.
+          <!-- LAO TRANSLATION NOTE: Add Lao tagline here -->
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/p/Golden-Tree-Restaurant" target="_blank" class="footer-social" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com" target="_blank" class="footer-social" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/85602028807777" target="_blank" class="footer-social" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="#menu">Our Menu</a>
+          <a href="#about">Our Story</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact &amp; Hours</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="tel:+85602028807777">+856 020 28 807 777</a>
+          <a href="https://wa.me/85602028807777" target="_blank">WhatsApp</a>
+          <a href="https://www.google.com/maps/search/Golden+Tree+Restaurant+Vientiane" target="_blank">Get Directions</a>
+          <a href="#contact">Phonsinuan Village, Vientiane</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Golden Tree Restaurant · Vientiane, Laos · All rights reserved.</p>
+      <p class="footer-lao">ໂກເດິນ ທຣີ ຮ້ານອາຫານ · ວຽງຈັນ, ລາວ</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     JAVASCRIPT
+============================================ -->
+<script>
+  /* --- Sticky Nav --- */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  /* --- Mobile Menu --- */
+  const mobMenu = document.getElementById('mobMenu');
+  function openMob() { mobMenu.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMob() { mobMenu.classList.remove('open'); document.body.style.overflow = ''; }
+
+  /* --- Menu Category Tabs --- */
+  function switchTab(cat) {
+    document.querySelectorAll('.menu-cat').forEach(el => el.classList.remove('visible'));
+    document.querySelectorAll('.mtab').forEach(el => el.classList.remove('active'));
+    document.getElementById('cat-' + cat).classList.add('visible');
+    event.target.classList.add('active');
+  }
+
+  /* --- Scroll reveal (IntersectionObserver) --- */
+  const revealEls = document.querySelectorAll('.menu-card, .review-card, .af, .gi, .cp');
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = `opacity .55s ease ${(i % 4) * 0.08}s, transform .55s ease ${(i % 4) * 0.08}s`;
+      revealObs.observe(el);
+    });
+  }
+</script>
+
+</body>
+</html>
